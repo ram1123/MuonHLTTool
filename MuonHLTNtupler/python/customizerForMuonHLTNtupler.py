@@ -109,7 +109,7 @@ def customizerFuncForMuonHLTNtupler(process, newProcessName = "MYHLT", doDYSkim 
     pfIsoTags = []
     pfIsoLabels = []
 
-    from MuonHLTTool.MuonHLTNtupler.ntupler_cfi import ntuplerBase
+    from ntupler_cfi import ntuplerBase
     process.ntupler = ntuplerBase.clone()
 
     process.ntupler.trackCollectionNames  = cms.untracked.vstring(   trackNames )
@@ -127,7 +127,7 @@ def customizerFuncForMuonHLTNtupler(process, newProcessName = "MYHLT", doDYSkim 
     process.ntupler.lumiScaler       = cms.untracked.InputTag("hltScalersRawToDigi",     "",     newProcessName)
 
     # process.ntupler.L1Muon           = cms.untracked.InputTag("hltGtStage2Digis",        "Muon", newProcessName)
-    # process.ntupler.L1Muon           = cms.untracked.InputTag("gmtStage2Digis",        "Muon", newProcessName) 
+    # process.ntupler.L1Muon           = cms.untracked.InputTag("gmtStage2Digis",        "Muon", newProcessName)
     # process.ntupler.L1Muon           = cms.untracked.InputTag("hltGtStage2Digis",        "Muon", "HLT") #for phaseII w/o emulation
     process.ntupler.L1Muon                        = cms.untracked.InputTag("simGmtStage2Digis",                  "", newProcessName)  # Phase II sim emul
     process.ntupler.L2Muon                        = cms.untracked.InputTag("hltL2MuonFromL1TkMuonCandidates",    "", newProcessName)

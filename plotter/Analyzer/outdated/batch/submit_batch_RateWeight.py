@@ -190,8 +190,8 @@ if __name__ == '__main__':
 
                 cmd = "hadd Outputs_%(histoVER)s/%(an)s/hist-%(histoVER)s-%(name)s-%(an)s.root Outputs_%(histoVER)s/%(an)s/%(name)s/hist-%(histoVER)s-%(name)s--Job*-%(an)s.root >Outputs_%(histoVER)s/%(an)s/hadd-%(name)s-%(an)s.log" % locals()
 
-                print ""
-                print cmd
+                print("")
+                print(cmd)
                 sys.stdout.flush()
                 gc.collect()
 
@@ -224,8 +224,8 @@ if __name__ == '__main__':
                         if doRecover:
                             outpath = "Outputs_%s/%s/%s/hist-%s-%s--%s-%s.root" % (histoVER, an, name, histoVER, name, strJobId, an)
                             if not os.path.isfile(outpath):
-                                print ""
-                                print cmd
+                                print("")
+                                print(cmd)
                                 sys.stdout.flush()
                                 gc.collect()
 
@@ -234,8 +234,8 @@ if __name__ == '__main__':
                                 gc.collect()
 
                         else:
-                            print ""
-                            print cmd
+                            print("")
+                            print(cmd)
                             sys.stdout.flush()
                             gc.collect()
 
@@ -247,8 +247,8 @@ if __name__ == '__main__':
                         # if jobid > 3:
                         #     sys.exit()
 
-    print ""
-    print "finished"
+    print("")
+    print("finished")
     sys.stdout.flush()
     gc.collect()
 

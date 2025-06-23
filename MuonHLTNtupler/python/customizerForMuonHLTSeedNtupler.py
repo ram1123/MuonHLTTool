@@ -17,7 +17,8 @@ def customizerFuncForMuonHLTSeedNtupler(process, newProcessName = "MYHLT", doDYS
     if hasattr(process, "DQMOutput"):
         del process.DQMOutput
 
-    from MuonHLTTool.MuonHLTNtupler.ntupler_seed_cfi import seedNtuplerBase
+    # from MuonHLTTool.MuonHLTNtupler.ntupler_seed_cfi import seedNtuplerBase
+    from ntupler_seed_cfi import seedNtuplerBase
     import SimTracker.TrackAssociatorProducers.quickTrackAssociatorByHits_cfi
     from SimTracker.TrackerHitAssociation.tpClusterProducer_cfi import tpClusterProducer as _tpClusterProducer
 
@@ -160,7 +161,7 @@ def customizerFuncForMuonHLTSeedNtupler(process, newProcessName = "MYHLT", doDYS
       closeFileFast = cms.untracked.bool(False),
     )
 
-    # from MuonHLTTool.MuonHLTNtupler.WmuSkimmer import WmuSkimmer 
+    # from MuonHLTTool.MuonHLTNtupler.WmuSkimmer import WmuSkimmer
     # process.WmuSkimmer = WmuSkimmer.clone()
 
     process.myseedpath = cms.Path(process.hltTPClusterProducer*process.hltTrackAssociatorByHits*process.seedNtupler)

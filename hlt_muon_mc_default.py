@@ -33,9 +33,7 @@ process.maxEvents = cms.untracked.PSet(
 # Input source
 process.source = cms.Source("PoolSource",
     dropDescendantsOfDroppedBranches = cms.untracked.bool(False),
-    # fileNames = cms.untracked.vstring('root://cms-xcache.rcac.purdue.edu//store/mc/Phase2Spring24DIGIRECOMiniAOD/DYToLL_M-50_TuneCP5_14TeV-pythia8/GEN-SIM-DIGI-RAW-MINIAOD/PU200_Trk1GeV_140X_mcRun4_realistic_v4-v1/2810000/67e21bae-f9cd-43f1-8974-e163400220f7.root'),
-    fileNames = cms.untracked.vstring('root://cms-xcache.rcac.purdue.edu//store/mc/Phase2Spring24DIGIRECOMiniAOD/DYToLL_M-50_TuneCP5_14TeV-pythia8/GEN-SIM-DIGI-RAW-MINIAOD/PU200_Trk1GeV_140X_mcRun4_realistic_v4-v1/2810000/d47130cf-22dd-4d2b-a458-93981dbf480b.root'),
-    # fileNames = cms.untracked.vstring('root://cms-xcache.rcac.purdue.edu//store/mc/Phase2Spring24DIGIRECOMiniAOD/DYToLL_M-50_TuneCP5_14TeV-pythia8/GEN-SIM-DIGI-RAW-MINIAOD/PU200_Trk1GeV_140X_mcRun4_realistic_v4-v1/2810000/67e21bae-f9cd-43f1-8974-e163400220f7.root'),
+    fileNames = cms.untracked.vstring('root://cms-xcache.rcac.purdue.edu//store/mc/Phase2Spring24DIGIRECOMiniAOD/DYToLL_M-50_TuneCP5_14TeV-pythia8/GEN-SIM-DIGI-RAW-MINIAOD/PU200_Trk1GeV_140X_mcRun4_realistic_v4-v1/2810000/67e21bae-f9cd-43f1-8974-e163400220f7.root'),
     inputCommands = cms.untracked.vstring(
         'keep *',
         'drop l1tPFJets_*_*_*',
@@ -261,8 +259,7 @@ process.source.inputCommands = cms.untracked.vstring(
 # -- Ntuple, DQMOutput, and EDMOutput -- #
 doNtuple = True
 if doNtuple:
-    # from MuonHLTTool.MuonHLTNtupler.customizerForMuonHLTNtupler import *
-    from customizerForMuonHLTNtupler import *
+    from MuonHLTTool.MuonHLTNtupler.customizerForMuonHLTNtupler import *
     process = customizerFuncForMuonHLTNtupler(process, "MYHLT", False)
 
     process.ntupler.offlineMuon                   = cms.untracked.InputTag("slimmedMuons")
